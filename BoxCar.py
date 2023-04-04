@@ -4,10 +4,11 @@ import Carriage
 class BoxCar(Carriage):
 
     valid_cargo_types = ["cattle", "paper", "food"]
-
-    def __init__(self, tare, length, volume, bc, cargo_type="cattle"):
+    bc_counter = 1
+    def __init__(self, tare, length, volume, cargo_type="cattle"):
         super().__init__(tare, length, volume)
-        self.BC = f"BC-{bc}"
+        self.BC = f"BC-{BoxCar.bc_counter}"
+        BoxCar.bc_counter += 1
         self.cargo_type = cargo_type
         self.cargo_weight = 0
 
