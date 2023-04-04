@@ -27,4 +27,4 @@ class Hopper(Carriage):
 
         # Method that returns string that represents object
     def __repr__(self):
-        return f"[Cistern] ID:{self.hp} Cargo type: {self.cargo_type} Volume:{self.volume}"
+        return f"[Hopper] ID:{self.hp} Cargo type: {self.cargo_type} Volume:{self.volume}"
