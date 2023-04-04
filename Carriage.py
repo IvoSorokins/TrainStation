@@ -4,8 +4,8 @@ class Carriage:
         self.length = length
         self.volume = volume
 
-    def set_volume(self, input ):
-        if input > 0:
-            self.volume = input
+    def set_volume(self, inputs):
+        if inputs > 0:
+            self.volume = inputs
         else:
             print("\nWrong value! \n Using default volume value of 0!")
