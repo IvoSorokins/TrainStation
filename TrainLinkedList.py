@@ -98,3 +98,33 @@ class TrainLinkedList:
                 prev_node = current_node
                 current_node = current_node.next
             raise ValueError(f"{carriage} is not found in the linked list")
+
+    def remove_carriage_by_position(self, position):
+        # Check if the linked list is empty
+        if self.head is None:
+            raise ValueError("Linked list is empty.")
+        # If position is 0, remove the head node
+        elif position == 0:
+            self.head = self.head.next
+            # Check if the linked list is now empty
+            if self.head is None:
+                self.tail = None
+            return
+        else:
+            current_node = self.head
+            prev_node = None
+            current_position = 0
+            # Traverse the linked list to find the node at the given position
+            while current_node is not None:
+                if current_position == position:
+                    # Remove the node by updating the previous node's next pointer
+                    prev_node.next = current_node.next
+                    # Check if the removed node was the tail node
+                    if current_node.next is None:
+                        self.tail = prev_node
+                    return
+                prev_node = current_node
+                current_node = current_node.next
+                current_position += 1
+            # If position is greater than the length of the linked list, raise an error
+            raise ValueError(f"Position {position} is not found in the linked list.")
