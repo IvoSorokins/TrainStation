@@ -8,7 +8,7 @@ class Gondola(Carriage):
     def __init__(self, tare, length, volume, cargo_type="Coal"):
         super().__init__(tare, length, volume)
         Gondola.gd_counter += 1
-        self.gd = f"HP-{Gondola.gd_counter}"
+        self.gd = f"HP-{Gondola.gd_counter -1 }"  # -1 so it starts from zero
         self.cargo_type = cargo_type
         self.cargo_weight = 0
 

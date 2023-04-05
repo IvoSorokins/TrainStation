@@ -2,13 +2,12 @@ import Carriage
 
 
 class TrainLinkedList(Carriage):
-    counter = 0
+    number = 0
 
     class Node:
-        def __init__(self, carriage ):
+        def __init__(self, carriage):
             self.carriage = carriage
             self.next = None
-            TrainLinkedList.count += 1
-            self.id = f"TrainLinkedList-{TrainLinkedList.count - 1}"
-
+            TrainLinkedList.number += 1
+            self.id = f"TrainLinkedList-{TrainLinkedList.number - 1}"  # -1 makes it start from 0
 

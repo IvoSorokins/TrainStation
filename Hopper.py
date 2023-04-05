@@ -8,7 +8,7 @@ class Hopper(Carriage):
     def __init__(self, tare, length, volume, cargo_type="Grain"):
         super().__init__(tare, length, volume)
         Hopper.hp_counter += 1
-        self.hp = f"HP-{Hopper.hp_counter}"
+        self.hp = f"HP-{Hopper.hp_counter - 1}"  # -1 so it starts from 0
         self.cargo_type = cargo_type
         self.cargo_weight = 0
 
