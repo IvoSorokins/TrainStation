@@ -1,15 +1,16 @@
-# from organized.package.place import BoxCar
-# from organized.package.place import Cistern
-# from organized.package.place import Gondola
-# from organized.package.place import Hopper
-# from organized.package.place import TrainLinkedList
-# from organized.package.place import TrainManager
+# import BoxCar
+# import Cistern
+# import Gondola
+# import Hopper
+import TrainLinkedList
+# import TrainManager
 
 
 
 
 
-# train = TrainLinkedList()
+train = TrainLinkedList.TrainLinkedList()
+
 
 # First train
 # box_cart = BoxCar(tare=10, length=200)

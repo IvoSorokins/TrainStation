@@ -1,4 +1,5 @@
 import TrainLinkedList
+import math
 
 
 class TrainManager:
@@ -52,3 +53,23 @@ class TrainManager:
         avg_mean_carriages = total_mean_carriages / len(self.train_list)
 
         return avg_mean_carriages
+
+    def std_carriage(self):
+        """
+        Calculates the standard deviation for carriages from the train list.
+        """
+        # Get the average mean of all carriages
+        mean_carriages = self.avg_mean_carriages()
+
+        # Formula sqrt(sum((single train carriage sum - average mean of all carriages)**2) / size of train list)
+        # I separated it in two parts
+
+        # Part 1  (sum((single train carriage sum - average mean of all carriages)**2)
+        sum_sq_diff = sum((train.num_carriages - mean_carriages) ** 2 for train in self.train_list)
+
+
+        # Part 2 /len(train.list which is size of train list
+        std_deviation = math.sqrt(sum_sq_diff / len(self.train_list))
+
+        # Return the standard deviation
+        return std_deviation
