@@ -177,3 +177,15 @@ class TrainLinkedList:
             # Set the second-to-last node as the new tail and remove the previous tail
             current_node.next = None
             self.tail = current_node
+
+    def remove_first(self):
+        """
+        Removes the first node (object) in the linked list
+        """
+        if self.head is None:  # If the list is empty
+            raise ValueError("Linked list is empty")
+
+        self.head = self.head.next  # Set the head to the next node
+
+        if self.head is None:  # If the list becomes empty - Error checking
+            self.tail = None
