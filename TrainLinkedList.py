@@ -1,3 +1,8 @@
+"""
+Implementation of a Linked List to store train carriages.
+"""
+
+
 class TrainLinkedList:
     number = 0  # Instead of TrainLinkedList I will use number - as counters name
 
@@ -7,12 +12,18 @@ class TrainLinkedList:
         self.number = f"TrainLinkedList-{TrainLinkedList.number}"
         TrainLinkedList.number += 1  # Increments counter by 1
 
-    class Node:  #
+    class Node:
+        """
+        Implementation of a Node to store a carriage.
+        """
         def __init__(self, carriage):
             self.carriage = carriage
             self.next = None  # Linked lists must set pointers for next element in list using "next" keyword
 
     def add_first(self, carriage):  # Create a new node with the given carriage
+        """
+        Add a carriage to the beginning of the linked list.
+        """
         new_node = TrainLinkedList.Node(carriage)
         if self.head is None:  # If the list is empty
             self.head = new_node  # Set the head to the new node
@@ -22,6 +33,9 @@ class TrainLinkedList:
             self.head = new_node  # Set the head to the new node
 
     def add_last(self, carriage):
+        """
+        Add a carriage to the end of the linked list.
+        """
         new_node = TrainLinkedList.Node(carriage)  # Create a new node with given carriage
         if self.tail is None:  # If the list is empty
             self.head = new_node  # Set the head to the new node
@@ -31,6 +45,9 @@ class TrainLinkedList:
             self.tail = new_node  # Set the tail to the new node
 
     def add_after(self, new_carriage, after_carriage):
+        """
+        Add a new carriage after a given carriage.
+        """
         new_node = TrainLinkedList.Node(new_carriage)  # Create a new node with the given new carriage
         current_node = self.head  # Start at the head of the list
         while current_node is not None:
@@ -49,6 +66,9 @@ class TrainLinkedList:
                 f"{after_carriage} is not found in the linked list")
 
     def add_before(self, new_carriage, before_carriage):
+        """
+        Add a new carriage before a given carriage.
+        """
         # Create a new node with given carriage
         new_node = TrainLinkedList.Node(new_carriage)
 
@@ -79,6 +99,9 @@ class TrainLinkedList:
             raise ValueError(f"{before_carriage} is not found in the linked list.")
 
     def remove_carriage(self, carriage):
+        """
+        Responsible for removing a node from the linked list that contains the specified carriage value.
+        """
         if self.head is None:
             raise ValueError("Linked list is empty")
         elif self.head.carriage == carriage:
@@ -99,7 +122,10 @@ class TrainLinkedList:
                 current_node = current_node.next
             raise ValueError(f"{carriage} is not found in the linked list")
 
-    def remove_carriage_by_position(self, position):
+    def remove_carriage_by_position(self, position):  # Takes index of position
+        """
+        Responsible for removing carriage by index
+        """
         # Check if the linked list is empty
         if self.head is None:
             raise ValueError("Linked list is empty.")
@@ -128,3 +154,26 @@ class TrainLinkedList:
                 current_position += 1
             # If position is greater than the length of the linked list, raise an error
             raise ValueError(f"Position {position} is not found in the linked list.")
+
+    def remove_end(self):
+        """
+        Removes the last object from the linked list.
+
+        Raises:
+            ValueError: If the linked list is empty.
+        """
+        # Check if linked list is empty
+        if self.head is None:
+            raise ValueError("Linked list is empty.")
+        # If linked list only has one node, remove it
+        elif self.head.next is None:
+            self.head = None
+            self.tail = None
+        # Otherwise, traverse the linked list to find the second-to-last node
+        else:
+            current_node = self.head
+            while current_node.next is not self.tail:
+                current_node = current_node.next
+            # Set the second-to-last node as the new tail and remove the previous tail
+            current_node.next = None
+            self.tail = current_node
