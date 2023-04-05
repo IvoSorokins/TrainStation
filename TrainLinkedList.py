@@ -47,3 +47,34 @@ class TrainLinkedList:
             raise ValueError(
                 # If the after carriage is not found, raise an error
                 f"{after_carriage} is not found in the linked list")
+
+    def add_before(self, new_carriage, before_carriage):
+        # Create a new node with given carriage
+        new_node = TrainLinkedList.Node(new_carriage)
+
+
+        # If the list is empty, raise an error
+        if self.head is None:
+            raise ValueError("Linked list is empty.")
+
+        # If the before carriage matches the head node's carriage, insert the new node at the head
+        elif self.head.carriage == before_carriage:
+            new_node.next = self.head
+            self.head = new_node
+            return
+
+        # Otherwise, traverse the list and insert the new node before the node with the before carriage
+        else:
+            prev_node = None
+            current_node = self.head
+            while current_node is not None:
+                if current_node.carriage == before_carriage:
+                    # Set the new node's "next" pointer to the current node
+                    new_node.next = current_node
+                    # Set the previous node's "next" pointer to the new node
+                    prev_node.next = new_node
+                    return
+                prev_node = current_node
+                current_node = current_node.next
+                # If the before carriage is not found in the list, raise an error
+            raise ValueError(f"{before_carriage} is not found in the linked list.")
