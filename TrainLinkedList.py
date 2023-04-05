@@ -1,7 +1,7 @@
 import Carriage
 
 
-class TrainLinkedList(Carriage):
+class TrainLinkedList:
     def __init__(self):
         self.number = 0   # Instead of TrainLinkedList I will use number - as counters name
         self.head = None  # Used for linked list, starts from head,head pointer to keep track of the first node
