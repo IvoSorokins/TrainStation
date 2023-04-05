@@ -1,5 +1,6 @@
 import TrainLinkedList
 import math
+import json
 
 
 class TrainManager:
@@ -67,9 +68,47 @@ class TrainManager:
         # Part 1  (sum((single train carriage sum - average mean of all carriages)**2)
         sum_sq_diff = sum((train.num_carriages - mean_carriages) ** 2 for train in self.train_list)
 
-
         # Part 2 /len(train.list which is size of train list
         std_deviation = math.sqrt(sum_sq_diff / len(self.train_list))
 
         # Return the standard deviation
         return std_deviation
+
+    def export_as_json(self, filename):
+        """
+            Exports all trains in the train list as JSON to the specified file.
+
+            Parameters:
+                filename (str): The name of the file to export to.
+        """
+        # Create an empty list to store train data
+        trains = []
+
+        # Iterate through each train in the train list
+        for train in self.train_list:
+
+            # Create a variable to store train data
+            train_data = {
+                "id": train.train_id,
+                "carriages": []
+            }
+            # Iterate through each carriage in the train
+            for carriage in train:
+
+                # Create a variable to store carriage data
+                carriage_data = {
+                    "id": carriage.carriage_id,
+                    "cargo_type": carriage.cargo_type,
+                    "volume": carriage.volume
+                }
+                # Add the carriage data to the train data
+                train_data["carriages"].append(carriage_data)
+
+            # Add the train data to the list of trains
+            trains.append(train_data)
+        # Create a dictionary to store the output data
+        output_data = {"train_list": trains}
+
+        # Write the output data to a JSON file
+        with open(filename, "w") as f:
+            json.dump(output_data, f, indent=4)
