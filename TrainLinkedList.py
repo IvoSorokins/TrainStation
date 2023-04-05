@@ -219,3 +219,23 @@ class TrainLinkedList:
 
         # If we get here, the carriage was not found.
         raise ValueError(f"{carriage_id} is not found in the linked list")
+
+    def get_carriage_count(self):
+        """
+        Returns the number of carriages in the linked list
+        """
+        count = 0
+        current_node = self.head
+        while current_node is not None:  # Iterates through linked list, incrementing count for each node
+            count += 1
+            current_node = current_node.next
+        return count
+
+    def __repr__(self):
+        current_node = self.head
+        carriage_str = ""
+        while current_node is not None:
+            carriage_str += str(current_node.carriage) + " -> "
+            current_node = current_node.next
+        carriage_str += "None"
+        return f"<{carriage_str}>"
