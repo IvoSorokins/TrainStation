@@ -37,3 +37,18 @@ class TrainManager:
                 self.train_list.remove(train)
                 return
         raise ValueError("Couldn't find such train in the train list!")
+
+    def avg_mean_carriages(self):
+        """
+        Calculates the average mean of carriages from the train list.
+        """
+        if not self.train_list:
+            return 0  # return 0 if there are no trains in the list
+
+        # Calculate the total mean of carriages for all trains in the list
+        total_mean_carriages = sum([train.mean_carriages() for train in self.train_list])
+
+        # Calculate the average mean of carriages
+        avg_mean_carriages = total_mean_carriages / len(self.train_list)
+
+        return avg_mean_carriages
