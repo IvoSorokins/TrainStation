@@ -1,10 +1,11 @@
 class TrainLinkedList:
+    number = 0  # Instead of TrainLinkedList I will use number - as counters name
+
     def __init__(self):
-        self.number = 0   # Instead of TrainLinkedList I will use number - as counters name
         self.head = None  # Used for linked list, starts from head,head pointer to keep track of the first node
         self.tail = None  # Used for linked list, points to the last node in the list
-        self.number = f"TrainLinkedList-{self.number}"
-        self.number += 1
+        self.number = f"TrainLinkedList-{TrainLinkedList.number}"
+        TrainLinkedList.number += 1  # Increments counter by 1
 
     class Node:  #
         def __init__(self, carriage):
