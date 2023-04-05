@@ -52,7 +52,6 @@ class TrainLinkedList:
         # Create a new node with given carriage
         new_node = TrainLinkedList.Node(new_carriage)
 
-
         # If the list is empty, raise an error
         if self.head is None:
             raise ValueError("Linked list is empty.")
@@ -78,3 +77,24 @@ class TrainLinkedList:
                 current_node = current_node.next
                 # If the before carriage is not found in the list, raise an error
             raise ValueError(f"{before_carriage} is not found in the linked list.")
+
+    def remove_carriage(self, carriage):
+        if self.head is None:
+            raise ValueError("Linked list is empty")
+        elif self.head.carriage == carriage:
+            self.head = self.head.next
+            if self.head is None:  # If the list becomes empty - Error checking
+                self.tail = None
+            return
+        else:
+            prev_node = None
+            current_node = self.head
+            while current_node is not None:
+                if current_node.carriage == carriage:
+                    prev_node.next = current_node.next
+                    if current_node == self.tail:  # If the removed node is the tail
+                        self.tail = prev_node
+                    return
+                prev_node = current_node
+                current_node = current_node.next
+            raise ValueError(f"{carriage} is not found in the linked list")
