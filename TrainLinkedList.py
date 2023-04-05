@@ -188,4 +188,34 @@ class TrainLinkedList:
         self.head = self.head.next  # Set the head to the next node
 
         if self.head is None:  # If the list becomes empty - Error checking
-            self.tail = None
+            self.tail = None  # Set the tail to None as well for error checking
+
+    def find_carriage_by_id(self, carriage_id):
+        """
+    Finds a carriage in the linked list by its ID and class.
+
+    Parameters:
+    - carriage_id: the ID of the carriage to find.
+    - carriage_class: the class of the carriage to find.
+
+    Returns:
+    - The carriage object if found.
+    - Raises a ValueError if the carriage is not found.
+
+    """
+        # Start at the head of the linked list.
+        current_node = self.head
+
+        # Traverse the linked list.
+        while current_node is not None:
+            # Check if the current node's carriage is an instance of the desired class
+            # and has a matching ID.
+            if current_node.carriage_id == carriage_id:
+                # Return the carriage object.
+                return current_node
+
+            # Move on to the next node.
+            current_node = current_node.next
+
+        # If we get here, the carriage was not found.
+        raise ValueError(f"{carriage_id} is not found in the linked list")
