@@ -1,4 +1,4 @@
-import Carriage
+from Carriage import Carriage
 from Livestock import Livestock
 from Solids import Solids
 
