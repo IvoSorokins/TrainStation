@@ -15,15 +15,13 @@ class TrainManager:
         """
         self.train_list = []  # List to hold TrainLinkedList objects
 
-    def add_train(self):
+    def add_train(self, train):
         """
         Adds a train object to the train list.
         """
-        # Create a new TrainLinkedList object for the train
-        train_linked_list = TrainLinkedList.TrainLinkedList()
 
         # Add the TrainLinkedList object to the train list
-        self.train_list.append(train_linked_list)
+        self.train_list.append(train)
 
     def remove_train(self, train_id):
         """
