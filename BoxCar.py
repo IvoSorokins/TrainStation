@@ -13,18 +13,18 @@ class BoxCar(Carriage):
         self.bc = f"BC-{BoxCar.bc_counter}"
         BoxCar.bc_counter += 1
         self.cargo_type = cargo_type
-        self.cargo_weight = 0
+        self.volume = volume
 
     @staticmethod
     def set_cargo_type(cargo_type):
-        assert cargo_type in BoxCar.valid_cargo_types, "\nInvalid cargo type! \nUsing default cargo type - cattle!"
+        assert cargo_type in BoxCar.valid_cargo_types, "\nInvalid cargo type! \nUsing default cargo type - Cattle!"
 
-    def add_cargo(self, cargo_type, cargo_weight):
+    def add_cargo(self, cargo_type, volume):
         if cargo_type in BoxCar.valid_cargo_types:
             self.cargo_type = cargo_type
-            self.cargo_weight = cargo_weight
+            self.volume = volume
         else:
-            print("\nInvalid cargo type! \nUsing default cargo type - cattle!")
+            print("\nInvalid cargo type! \nUsing default cargo type - Cattle!")
 
     # Method that returns string that represents object
     def __repr__(self):
