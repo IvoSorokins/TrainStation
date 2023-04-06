@@ -6,7 +6,7 @@ class Cistern(Carriage):     # Create a class called Cistern which will represen
     valid_cargo_types = [Liquid.OIL.value, Liquid.MILK.value, Liquid.WATER.value]
     ct_counter = 0
 
-    def __init__(self, tare, length, volume, cargo_type=Liquid.OIL.value):
+    def __init__(self, tare, length, volume=0, cargo_type=Liquid.OIL.value):
         super().__init__(tare, length, volume)
         self.ct = f"CT-{Cistern.ct_counter}"
         Cistern.ct_counter += 1

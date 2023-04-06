@@ -6,7 +6,7 @@ class Hopper(Carriage):
     valid_cargo_types = [Granular.GRAIN.value, Granular.SAND.value, Granular.FERTILIZER.value]
     hp_counter = 0
 
-    def __init__(self, tare, length, volume, cargo_type=Granular.GRAIN.value):
+    def __init__(self, tare, length, volume=0, cargo_type=Granular.GRAIN.value):
         super().__init__(tare, length, volume)
         self.hp = f"HP-{Hopper.hp_counter}"
         Hopper.hp_counter += 1
