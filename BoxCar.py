@@ -15,11 +15,9 @@ class BoxCar(Carriage):
         self.cargo_type = cargo_type
         self.cargo_weight = 0
 
-    def set_cargo_type(self, cargo_type):
-        if self.cargo_type in BoxCar.valid_cargo_types:
-            self.cargo_type = cargo_type
-        else:
-            print("\nInvalid cargo type! \nUsing default cargo type - cattle!")
+    @staticmethod
+    def set_cargo_type(cargo_type):
+        assert cargo_type in BoxCar.valid_cargo_types, "\nInvalid cargo type! \nUsing default cargo type - cattle!"
 
     def add_cargo(self, cargo_type, cargo_weight):
         if cargo_type in BoxCar.valid_cargo_types:
