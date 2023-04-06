@@ -11,7 +11,7 @@ class Cistern(Carriage):     # Create a class called Cistern which will represen
         self.ct = f"CT-{Cistern.ct_counter}"
         Cistern.ct_counter += 1
         self.cargo_type = cargo_type
-        self.cargo_weight = 0
+        self.volume = volume
 
     def set_cargo_type(self, cargo_type):
         if self.cargo_type in Cistern.valid_cargo_types:
@@ -19,10 +19,10 @@ class Cistern(Carriage):     # Create a class called Cistern which will represen
         else:
             print("\nInvalid cargo type! \nUsing default cargo type - Oil!")
 
-    def add_cargo(self, cargo_type, cargo_weight):
+    def add_cargo(self, cargo_type, volume):
         if cargo_type in Cistern.valid_cargo_types:
             self.cargo_type = cargo_type
-            self.cargo_weight = cargo_weight
+            self.volume = volume
         else:
             print("\nInvalid cargo type! \nUsing default cargo type - Oil!")
 

@@ -12,7 +12,7 @@ class Gondola(Carriage):
         self.gd = f"HP-{Gondola.gd_counter}"
         Gondola.gd_counter += 1
         self.cargo_type = cargo_type
-        self.cargo_weight = 0
+        self.volume = volume
 
     def set_cargo_type(self, cargo_type):
         if self.cargo_type in Gondola.valid_cargo_types:
@@ -20,10 +20,10 @@ class Gondola(Carriage):
         else:
             print("\nInvalid cargo type! \nUsing default cargo type - Coal!")
 
-    def add_cargo(self, cargo_type, cargo_weight):
+    def add_cargo(self, cargo_type, volume):
         if cargo_type in Gondola.valid_cargo_types:
             self.cargo_type = cargo_type
-            self.cargo_weight = cargo_weight
+            self.volume = volume
         else:
             print("\nInvalid cargo type! \nUsing default cargo type - Grain!")
 

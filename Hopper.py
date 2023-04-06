@@ -11,7 +11,7 @@ class Hopper(Carriage):
         self.hp = f"HP-{Hopper.hp_counter}"
         Hopper.hp_counter += 1
         self.cargo_type = cargo_type
-        self.cargo_weight = 0
+        self.volume = volume
 
     def set_cargo_type(self, cargo_type):
         if self.cargo_type in Hopper.valid_cargo_types:
@@ -19,10 +19,10 @@ class Hopper(Carriage):
         else:
             print("\nInvalid cargo type! \nUsing default cargo type - Grain!")
 
-    def add_cargo(self, cargo_type, cargo_weight):
+    def add_cargo(self, cargo_type, volume):
         if cargo_type in Hopper.valid_cargo_types:
             self.cargo_type = cargo_type
-            self.cargo_weight = cargo_weight
+            self.volume = volume
         else:
             print("\nInvalid cargo type! \nUsing default cargo type - Grain!")
 
