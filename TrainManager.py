@@ -1,4 +1,4 @@
-import TrainLinkedList
+from TrainLinkedList import TrainLinkedList
 import Carriage
 import math
 import json
