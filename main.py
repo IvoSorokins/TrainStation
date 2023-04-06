@@ -1,9 +1,10 @@
-# import BoxCar
-# import Cistern
-# import Gondola
-# import Hopper
-import TrainLinkedList
-# import TrainManager
+from BoxCar import BoxCar
+from Cistern import Cistern
+from Gondola import Gondola
+from Hopper import Hopper
+from TrainLinkedList import TrainLinkedList
+from TrainManager import TrainManager
+
 
 
 
@@ -13,7 +14,7 @@ train = TrainLinkedList.TrainLinkedList()
 
 
 # First train
-# box_cart = BoxCar(tare=10, length=200)
+box_cart = BoxCar(tare=10, length=200)
 # cistern = Cistern(tare=10, length=250)
 # gondola = Gondola(tare=15, length=350)
 # hopper = Hopper(tare=20, length=120)
