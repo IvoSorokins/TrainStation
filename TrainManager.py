@@ -1,4 +1,5 @@
 import TrainLinkedList
+import Carriage
 import math
 import json
 
@@ -112,3 +113,29 @@ class TrainManager:
         # Write the output data to a JSON file
         with open(filename, "w") as f:
             json.dump(output_data, f, indent=4)
+
+    def add_trains_from_json(self, filename):
+        """
+        Adds train objects to the train manager from a JSON file.
+
+        Parameters:
+            filename (str): The name of the file containing the JSON data.
+        """
+        # Open and read the JSON file
+        with open(filename, "r") as f:
+            data = json.load(f)
+
+        # Loop through each train in the file
+        for train_data in data["train_list"]:
+            # Create a new train linked list
+            train_linked_list = TrainLinkedList(train_id=None)
+            # Loop through each carriage in the train
+            for carriage_data in train_data["carriages"]:
+                # Extract the cart type, cargo type, and volume from the carriage data
+                cart_type = carriage_data["cart_type"]
+                cargo_type = carriage_data["cargo_type"]
+                volume = carriage_data["volume"]
+                # Add the carriage to the train linked list
+                train_linked_list.add_carriage(cart_type, cargo_type, volume)
+            # Add the train to the train list
+            self.train_list.append(train_linked_list)
