@@ -1,11 +1,13 @@
 import Carriage
+from Granular import Granular
+from Solids import Solids
 
 
 class Gondola(Carriage):
-    valid_cargo_types = ["Coal", "Gravel", "Metal ore"]
+    valid_cargo_types = [Granular.COAL.value, Granular.GRAVEL.value, Solids.METAL_ORE.value]
     gd_counter = 0
 
-    def __init__(self, tare, length, volume, cargo_type="Coal"):
+    def __init__(self, tare, length, volume, cargo_type=Granular.COAL.value):
         super().__init__(tare, length, volume)
         self.gd = f"HP-{Gondola.gd_counter}"
         Gondola.gd_counter += 1

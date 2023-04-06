@@ -1,12 +1,14 @@
 import Carriage
+from Livestock import Livestock
+from Solids import Solids
 
 
 class BoxCar(Carriage):
 
-    valid_cargo_types = ["cattle", "paper", "food"]
+    valid_cargo_types = [Livestock.CATTLE.value, Solids.PAPER.value, Solids.FOOD.value]
     bc_counter = 0
 
-    def __init__(self, tare, length, volume, cargo_type="cattle"):
+    def __init__(self, tare, length, volume, cargo_type=Livestock.CATTLE.value):
         super().__init__(tare, length, volume)
         self.bc = f"BC-{BoxCar.bc_counter}"
         BoxCar.bc_counter += 1

@@ -1,11 +1,12 @@
 import Carriage
+from Liquid import Liquid
 
 
 class Cistern(Carriage):     # Create a class called Cistern which will represent a cistern carriage.
-    valid_cargo_types = ["Oil", "Milk", "Water"]
+    valid_cargo_types = [Liquid.OIL.value, Liquid.MILK.value, Liquid.WATER.value]
     ct_counter = 0
 
-    def __init__(self, tare, length, volume, cargo_type="Oil"):
+    def __init__(self, tare, length, volume, cargo_type=Liquid.OIL.value):
         super().__init__(tare, length, volume)
         self.ct = f"CT-{Cistern.ct_counter}"
         Cistern.ct_counter += 1
@@ -23,7 +24,7 @@ class Cistern(Carriage):     # Create a class called Cistern which will represen
             self.cargo_type = cargo_type
             self.cargo_weight = cargo_weight
         else:
-            print("\nInvalid cargo type! \nUsing default cargo type - oil!")
+            print("\nInvalid cargo type! \nUsing default cargo type - Oil!")
 
         # Method that returns string that represents object
     def __repr__(self):
