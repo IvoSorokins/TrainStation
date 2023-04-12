@@ -10,14 +10,14 @@ class BoxCar(Carriage):
     valid_cargo_types: List[str] = [Livestock.CATTLE.value, Solids.PAPER.value, Solids.FOOD.value]
     bc_counter: int = 0
 
-    def __init__(self, tare: float, length: float, volume: float = 0, cargo_type: str = Livestock.CATTLE.value):
+    def __init__(self, tare: int, length: int, volume: int = 0, cargo_type: str = Livestock.CATTLE.value):
         """
         Initialize a BoxCar object.
 
         Args:
-            tare (float): The weight of the empty carriage in tons.
-            length (float): The length of the carriage in meters.
-            volume (float, optional): The volume of the carriage in cubic meters. Defaults to 0.
+            tare (int): The weight of the empty carriage in tons.
+            length (int): The length of the carriage in meters.
+            volume (int, optional): The volume of the carriage in cubic meters. Defaults to 0.
             cargo_type (str, optional): The type of cargo the carriage is carrying. Defaults to Livestock.CATTLE.value.
         """
         super().__init__(tare, length, volume)
@@ -65,4 +65,3 @@ class BoxCar(Carriage):
             str: A string representation of the BoxCar object.
         """
         return f"[Box Car] ID:{self.id} Cargo type: {self.cargo_type} Volume:{self.volume}"
-
