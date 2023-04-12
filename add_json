@@ -1,0 +1,44 @@
+{
+  "train_list": [
+    {
+      "id": "TrainLinkedList-2",
+      "carriages": [
+        {
+          "id": "HP-2",
+          "cargo_type": "Fertilizer",
+          "volume": 40
+        },
+        {
+          "id": "GD-2",
+          "cargo_type": "Metal ore",
+          "volume": 30
+        }
+      ]
+    },
+    {
+      "id": "TrainLinkedList-3",
+      "carriages": [
+        {
+          "id": "BC-3",
+          "cargo_type": "Paper",
+          "volume": 10
+        },
+        {
+          "id": "CT-3",
+          "cargo_type": "Water",
+          "volume": 40
+        },
+        {
+          "id": "HP-3",
+          "cargo_type": "Grain",
+          "volume": 20
+        },
+        {
+          "id": "GD-3",
+          "cargo_type": "Gravel",
+          "volume": 17
+        }
+      ]
+    }
+  ]
+}
