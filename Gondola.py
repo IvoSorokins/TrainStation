@@ -4,6 +4,24 @@ from Solids import Solids
 
 
 class Gondola(Carriage):
+    """
+            Class representing a gondola carriage.
+
+            Attributes:
+            - tare (int): the weight of the empty gondola in kg
+            - length (int): the length of the gondola in meters
+            - volume (int): the volume of the gondola in cubic meters
+            - cargo_type (str): the type of cargo the gondola is carrying
+
+            Class Attributes:
+            - valid_cargo_types (list): a list of valid cargo types for the gondola
+            - gd_counter (int): a counter for the ID of gondolas created
+
+            Methods:
+            - set_cargo_type(cls, cargo_type): sets the type of cargo the gondola is carrying
+            - add_cargo(self, cargo_type, volume): adds cargo to the gondola
+            - __repr__(self): returns a string representation of the gondola
+            """
     valid_cargo_types = [Granular.COAL.value, Granular.GRAVEL.value, Solids.METAL_ORE.value]
     gd_counter = 0
 
