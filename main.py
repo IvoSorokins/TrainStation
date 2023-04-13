@@ -5,6 +5,20 @@ from Hopper import Hopper
 from TrainLinkedList import TrainLinkedList
 from TrainManager import TrainManager
 
+"""
+This driver code demonstrates the usage of TrainLinkedList, TrainManager and Carriage 
+classes to create and manage trains.
+
+The code creates two trains, adds carriages to them, performs operations such as adding, 
+removing, and finding carriages,
+and calculates statistics such as the average number of carriages per train and standard deviation.
+
+It also imports and exports train data from/to a JSON file.
+
+Author: Ivo Sorokins
+
+Date: 13/04/2023
+"""
 
 train = TrainLinkedList()
 
@@ -12,7 +26,6 @@ Border = ('\033[33m'+"==========================================================
                      "========" + '\033[0m')  # Just for visuals
 
 # First train
-
 box_cart = BoxCar(tare=10, length=200)
 cistern = Cistern(tare=10, length=250)
 gondola = Gondola(tare=15, length=350)
@@ -26,18 +39,14 @@ gondola.add_cargo('Coal', 20)
 
 # Carriage print out
 print(Border+"\nFirst Train Carriages:\n")
-
 print(box_cart)
 print(cistern)
 print(hopper)
 print(gondola)
-
 print(Border)
-
 
 train.add_first(box_cart)
 train.add_last(cistern)
-
 
 #                New       After
 train.add_after(gondola, box_cart)
@@ -49,7 +58,6 @@ print(Border)
 print("First Train carriage count after adding after and add before method is called: "+str(train.get_carriage_count()))
 # Output should be 3
 print(Border)
-
 
 # Second train
 second_train = TrainLinkedList()
