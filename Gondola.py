@@ -46,7 +46,6 @@ class Gondola(Carriage):
         else:
             raise ValueError("Invalid cargo type! Valid types are: " + ", ".join(str(self.valid_cargo_types)))
 
-        # Method that returns string that represents object
     def __repr__(self):
         """
                 Returns a string representation of the gondola.
