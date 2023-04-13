@@ -1,4 +1,5 @@
 class Carriage:
+    """A class representing a carriage."""
     def __init__(self, tare, length, volume=0):
         """
         Initialize Carriage object with tare, length and volume.
