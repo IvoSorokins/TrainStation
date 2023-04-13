@@ -22,6 +22,9 @@ class TrainManager:
     def add_train(self, train):
         """
         Adds a train object to the train list.
+
+        Parameters:
+            train (TrainLinkedList): The train object to add to the train list.
         """
 
         # Add the TrainLinkedList object to the train list
@@ -46,6 +49,9 @@ class TrainManager:
     def avg_mean_carriages(self):
         """
         Calculates the average mean of carriages from the train list.
+
+        Returns:
+            float: The average mean of carriages.
         """
         if not self.train_list:
             return 0  # return 0 if there are no trains in the list
@@ -61,6 +67,12 @@ class TrainManager:
     def std_carriage(self, train):
         """
         Calculates the standard deviation for carriages from the train list.
+
+        Parameters:
+            train (TrainLinkedList): The train object to calculate the standard deviation for.
+
+        Returns:
+            float: The standard deviation for carriages.
         """
         train_count = 0
         for train in self.train_list:
@@ -70,6 +82,12 @@ class TrainManager:
         return std
 
     def export_as_json(self, file_name):
+        """
+        Exports the train list as a JSON file.
+
+        Parameters:
+        file_name (str): The name of the file to export the JSON data to.
+        """
         train_data = []
         for train in self.train_list:
             train_id = train.train_id
@@ -94,6 +112,12 @@ class TrainManager:
             json.dump(output_data, output_file, indent=2)
 
     def add_trains_from_json(self, file_path):
+        """
+        Adds trains from a JSON file to the train list.
+
+        Parameters:
+        fil_path (str): The path to the JSON
+        """
         with open(file_path) as f:
             data = json.load(f)
             for train_data in data['train_list']:
