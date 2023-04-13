@@ -8,6 +8,12 @@ class Granular(Enum):
     SAND = "Sand"
     FERTILIZER = "Fertilizer"
 
-    @classmethod  # Class method that returns a list of all the values in the enumeration class
-    def as_list(cls):  # cls refers to the enumeration class itself
-        return [c.value for c in cls]  # iterates over  all the instances of enum class
+    @classmethod
+    def as_list(cls):
+        """
+        Returns a list of all the values in the enumeration class.
+
+        Returns:
+        - list: a list of strings representing the values in the enumeration class
+        """
+        return [c.value for c in cls]  
