@@ -49,9 +49,9 @@ class Gondola(Carriage):
         # Method that returns string that represents object
     def __repr__(self):
         """
-                Returns a string representation of the cistern.
+                Returns a string representation of the gondola.
 
                 Returns:
-                - str: a string representation of the cistern
+                - str: a string representation of the gondola
                 """
         return f"[Gondola] ID:{self.id} Cargo type: {self.cargo_type} Volume:{self.volume}"
