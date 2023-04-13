@@ -12,10 +12,10 @@ class Gondola(Carriage):
             Initializes a Gondola object.
 
             Args:
-            - tare (int): the weight of the empty carriage in kg
-            - length (int): the length of the carriage in meters
-            - volume (int): the volume of the carriage in cubic meters
-            - cargo_type (str): the type of cargo the cistern is carrying (default: Liquid.OIL.value)
+            - tare (int): the weight of the empty gondola in kg
+            - length (int): the length of the gondola in meters
+            - volume (int): the volume of the gondola in cubic meters
+            - cargo_type (str): the type of cargo the gondola is carrying (default: Granular.COAL.value)
             """
         super().__init__(tare, length, volume)
         self.id = f"GD-{Gondola.gd_counter}"
@@ -24,6 +24,15 @@ class Gondola(Carriage):
 
     @classmethod
     def set_cargo_type(cls, cargo_type):
+        """
+        Sets the type of cargo that the gondola can carry.
+
+        Args:
+        - cargo_type (str): the type of cargo
+
+        Raises:
+        - ValueError: if the cargo_type is not a valid type
+        """
         if cls.cargo_type in cls.valid_cargo_types:
             cls.cargo_type = cargo_type
         else:
