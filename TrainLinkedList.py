@@ -7,6 +7,7 @@ class TrainLinkedList:
     number = 0  # Instead of TrainLinkedList I will use number - as counters name
 
     def __init__(self):
+        """Initialize a new instance of the TrainLinkedList class"""
         self.head = None  # Used for linked list, starts from head,head pointer to keep track of the first node
         self.tail = None  # Used for linked list, points to the last node in the list
         self.train_id = f"TrainLinkedList-{TrainLinkedList.number}"
@@ -23,7 +24,7 @@ class TrainLinkedList:
 
     def add_first(self, carriage):  # Create a new node with the given carriage
         """
-        Add a carriage to the beginning of the linked list.
+        Add a new node containing the given carriage to the beginning of the linked list.
         """
         new_node = TrainLinkedList.Node(carriage)
         if self.head is None:  # If the list is empty
@@ -35,7 +36,7 @@ class TrainLinkedList:
 
     def add_last(self, carriage):
         """
-        Add a carriage to the end of the linked list.
+        Add a new node containing the given carriage to the end of the linked list.
         """
         new_node = TrainLinkedList.Node(carriage)  # Create a new node with given carriage
         if self.tail is None:  # If the list is empty
@@ -47,7 +48,7 @@ class TrainLinkedList:
 
     def add_after(self, new_carriage, after_carriage):
         """
-        Add a new carriage after a given carriage.
+        Add a new node containing the given new_carriage after the first occurrence of the given after_carriage.
         """
         new_node = TrainLinkedList.Node(new_carriage)  # Create a new node with the given new carriage
         current_node = self.head  # Start at the head of the list
@@ -68,7 +69,7 @@ class TrainLinkedList:
 
     def add_before(self, new_carriage, before_carriage):
         """
-        Add a new carriage before a given carriage.
+        Add a new node containing the given new_carriage before the first occurrence of the given before_carriage.
         """
         # Create a new node with given carriage
         new_node = TrainLinkedList.Node(new_carriage)
