@@ -70,7 +70,7 @@ class Cistern(Carriage):
             self.cargo_type = cargo_type
             self.volume = volume
         else:
-            raise ValueError("Invalid cargo type! Valid types are: " + ", ".join(str(self.valid_cargo_types))
+            raise ValueError("Invalid cargo type! Valid types are: " + ", ".join(str(self.valid_cargo_types)))
 
     def __repr__(self):
         """
